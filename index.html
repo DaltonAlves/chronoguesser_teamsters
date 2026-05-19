@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronoguesser: International Brotherhood of Teamsters Web Archives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Chronoguesser: International Brotherhood of Teamsters Web Archives</h1>
+            <p>Look for clues in the website history below and guess the year!</p>
+            <div id="site-clue" class="badge">Loading original URL...</div>
+        </header>
+
+        <div class="iframe-wrapper" id="frame-wrapper">
+            <div class="loading-overlay" id="loading">Gathering historical data...</div>
+            <iframe id="game-frame" src="" sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
+        </div>
+
+        <div class="game-controls">
+            <div class="archive-disclaimer">
+                ⚠️ <strong>Note on Archival Fidelity:</strong> Because web crawlers sometimes fail to capture every stylesheet, script, or asset, some snapshots may appear incomplete or broken. To learn more about why web replays look this way, see the <a href="https://libguides.gwu.edu/webarchive" target="_blank">Web Archiving LibGuide</a>.
+            </div>
+
+            <div class="slider-container">
+                <span class="year-label" id="min-year-label">...</span>
+                <input 
+                    type="range" 
+                    id="year-slider" 
+                    min="0" 
+                    max="100" 
+                    value="50" 
+                    step="1"
+                >
+                <span class="year-label" id="max-year-label">...</span>
+            </div>
+
+            <div class="current-guess">
+                Your Guess: <span id="guess-display">...</span>
+            </div>
+                
+            <button id="submit-btn" class="btn primary-btn">Submit Guess</button>
+            <button id="next-btn" class="btn secondary-btn hidden">Next Website</button>
+        </div>
+
+        <div id="result-modal" class="result-box hidden">
+            <h2 id="result-title"></h2>
+            <p id="result-details"></p>
+        </div>
+
+        <div class="info-resources">
+            <h2>Explore the Archives</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>GWU Web Archives</h3>
+                    <p>Interested in learning more about the Special Collections Research Center web archives collection?</p>
+                    <a href="https://library.gwu.edu/web-archives-program" target="_blank" class="resource-link">Visit the SCRC Website →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Web Archiving 101</h3>
+                    <p>Interested in learning more about how web archives are collected, preserved, and structured?</p>
+                    <a href="https://libguides.gwu.edu/webarchive" target="_blank" class="resource-link">View the LibGuide →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
